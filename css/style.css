@@ -123,7 +123,7 @@ a {
 .gridBodyInicio {
     display: grid;
     grid-template-areas: "tituloWeb" "barraMenu" "contenidoBody" "barraFooter";
-    grid-template-rows: 30px 100px auto 100px;
+    grid-template-rows: auto 100px auto auto;
     grid-template-columns: auto;
 }
 
@@ -145,6 +145,17 @@ a {
     padding: 40px;
     margin: 200px;
     height: 300px;
+    animation-name: logoIn;
+    animation-duration: 3s;
+}
+
+@keyframes logoIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 2;
+    }
 }
 
 .barraFooter {
@@ -157,7 +168,7 @@ a {
 .gridBodyAgenda {
     display: grid;
     grid-template-areas: "tituloWeb" "barraMenu" "contenidoBodyAgenda" "barraFooter";
-    grid-template-rows: 30px 70px auto 90px;
+    grid-template-rows: auto 100px auto auto;
     grid-template-columns: auto;
 }
 
@@ -167,6 +178,38 @@ a {
 
 .imgAgenda {
     height: 300px;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: rgb(38, 37, 37);
+}
+
+.container:hover .overlay {
+    opacity: 1;
+}
+
+.text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
 }
 
 .gridAgenda {
@@ -180,7 +223,7 @@ a {
 .gridBodyGaleria {
     display: grid;
     grid-template-areas: "tituloWeb" "barraMenu" "contenidoBodyGaleria" "barraFooter";
-    grid-template-rows: 30px 70px auto 90px;
+    grid-template-rows: auto 100px auto auto;
     grid-template-columns: auto;
 }
 
@@ -190,6 +233,11 @@ a {
 
 .fotosGaleria {
     height: 270px;
+    animation-name: galeria;
+}
+
+.fotosGaleria:hover {
+    opacity: 0.5;
 }
 
 .tituloGaleria,
@@ -223,7 +271,7 @@ a {
 .gridBodyNosotres {
     display: grid;
     grid-template-areas: "tituloWeb" "barraMenu" "contenidoBodyNosotres" "barraFooter";
-    grid-template-rows: 30px 70px auto 90px;
+    grid-template-rows: auto 100px auto auto;
     grid-template-columns: auto;
 }
 
@@ -278,7 +326,7 @@ a {
 .gridBodyContacto {
     display: grid;
     grid-template-areas: "tituloWeb" "barraMenu" "contenidoBodyContacto" "barraFooter";
-    grid-template-rows: 30px 70px auto 90px;
+    grid-template-rows: auto auto auto auto;
     grid-template-columns: auto;
 }
 
@@ -320,7 +368,7 @@ a {
     .gridBodyInicio {
         display: grid;
         grid-template-areas: "tituloWeb" "barraMenu" "contenidoBody" "barraFooter";
-        grid-template-rows: auto 80px auto 100px;
+        grid-template-rows: auto 80px auto auto;
         grid-template-columns: auto;
     }
     .barraMenu {
@@ -362,17 +410,12 @@ a {
     .barraFooter {
         grid-area: barraFooter;
     }
-
-
     /* Página Agenda */
     .gridBodyAgenda {
         display: grid;
-        grid-template-areas: 
-        "barraMenu" "contenidoBodyAgenda"
-        "barraFooter";
-        grid-template-rows: 80px auto 100px;
+        grid-template-areas: "barraMenu" "contenidoBodyAgenda" "barraFooter";
+        grid-template-rows: 80px auto auto;
         grid-template-columns: 100%;
-
     }
     .gridAgenda {
         display: grid;
@@ -381,12 +424,10 @@ a {
     .imgAgenda {
         height: 200px;
     }
-
     .contenidoBodyAgenda {
         grid-area: contenidoBodyAgenda;
         margin-top: 50px;
     }
-
     /* Página Galeria */
     .gridBodyGaleria {
         display: grid;
@@ -405,27 +446,19 @@ a {
     .contenidoBodyGaleria {
         margin-top: 70px;
     }
-
     .fotosGaleria {
         height: 150px;
     }
-
     h1 {
         display: none;
     }
-
-
     /* Página Nosotres */
     .gridBodyNosotres {
         display: grid;
-        grid-template-areas: 
-        "barraMenu" "contenidoBodyNosotres"
-        "barraFooter";
+        grid-template-areas: "barraMenu" "contenidoBodyNosotres" "barraFooter";
         grid-template-rows: auto auto auto;
         grid-template-columns: 100%;
-
     }
-
     .gridNosotres {
         display: grid;
         grid-template-rows: 8% auto auto;
@@ -435,9 +468,7 @@ a {
         justify-items: center;
         margin-top: 70px;
         margin-bottom: 40px;
-
     }
-
     .textoDescripcion {
         grid-area: texto;
         display: flex;
@@ -446,7 +477,6 @@ a {
         width: 100%;
         padding: 30px;
     }
-    
     .imagenNosotres {
         grid-area: imagen;
         display: flex;
@@ -457,31 +487,24 @@ a {
     /* Página Contacto */
     .gridBodyContacto {
         display: grid;
-        grid-template-areas: 
-        "barraMenu" "contenidoBodyContacto"
-        "barraFooter";
+        grid-template-areas: "barraMenu" "contenidoBodyContacto" "barraFooter";
         grid-template-rows: auto auto auto;
         grid-template-columns: 100%;
-
     }
-
     .fotoContacto {
         padding: 10px;
         height: 180px;
     }
-    
     .formularioContacto {
         margin: 10px;
         padding: 18px;
         margin-top: 50px;
         margin-bottom: 10px;
     }
-    
     .formu {
         display: flex;
         justify-items: center;
         align-items: center;
         flex-direction: column;
     }
-
 }
