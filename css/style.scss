@@ -1,14 +1,13 @@
-/* Tipografía */
+/* Partials */
 
-@font-face {
-    font-family: gt-walsheim;
-    src: url('../media/fonts/GT-Walsheim-Pro-Regular.ttf');
-}
+@import "colores";
+@import "tipografia";
+
 
 /* Desformateador */
 
 * {
-    font-family: 'gt-walsheim', regular;
+    font-family: $tipografia;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -20,11 +19,11 @@
 /* Barra Título */
 
 h1 {
-    color: rgb(38, 37, 37);
+    color: $color-oscuro;
     font-size: 15px;
     margin-top: 0.5rem;
     padding: 5px;
-    background-color: rgb(252, 252, 252);
+    background-color: $color-claro;
     display: flex;
     align-items:center;
     justify-content: center;
@@ -34,7 +33,7 @@ h1 {
 /* Menú Superior */
 
 .gridHeader {
-    background-color: rgb(38, 37, 37);
+    background-color: $color-oscuro;
     display: grid;
     grid-template-areas: "logoHeader menuHeader";
     grid-template-columns: 25% 75%;
@@ -71,7 +70,7 @@ h1 {
 }
 
 .bg-dark{
-    background-color: rgb(38, 37, 37);
+    background-color: $color-oscuro;
 }
 
 
@@ -82,7 +81,7 @@ body {
 }
 
 a {
-    color: aliceblue;
+    color: $color-claro;
     text-decoration: none;
 }
 
@@ -90,7 +89,7 @@ a {
 /* Footer General */
 
 .gridFooter {
-    background-color: rgb(38, 37, 37);
+    background-color: $color-oscuro;
     padding: 15px;
     display: grid;
     grid-template-areas: "direccion logos";
@@ -195,6 +194,9 @@ h6{
 .container {
     position: relative;
     width: 100%;
+    &:hover .overlay {
+        opacity: 1;
+    }
 }
 
 .overlay {
@@ -207,15 +209,11 @@ h6{
     width: 100%;
     opacity: 0;
     transition: .5s ease;
-    background-color: rgb(38, 37, 37);
-}
-
-.container:hover .overlay {
-    opacity: 1;
+    background-color: $color-oscuro;
 }
 
 .text {
-    color: white;
+    color: $color-claro;
     font-size: 20px;
     position: absolute;
     top: 50%;
@@ -246,11 +244,11 @@ h6{
 .fotosGaleria {
     height: 270px;
     animation-name: galeria;
+    &:hover {
+        opacity: 0.5;
+    }
 }
 
-.fotosGaleria:hover {
-    opacity: 0.5;
-}
 
 .tituloGaleria,
 .tituloAgenda {
@@ -258,7 +256,7 @@ h6{
 }
 
 .grid-layout {
-    background-color: rgb(255, 255, 255);
+    background-color: $color-claro;
     padding: 20px;
     padding-bottom: 40px;
     display: grid;
@@ -268,13 +266,13 @@ h6{
 
 .caja {
     display: flex;
-    background-color: rgb(255, 255, 255);
+    background-color: $color-claro;
     justify-content: center;
     padding: 5px;
 }
 
 .c1 {
-    background-color: rgb(255, 255, 255);
+    background-color: $color-claro;
 }
 
 
@@ -393,7 +391,7 @@ h6{
         display: none;
     }
     .gridHeader {
-        background-color: rgb(38, 37, 37);
+        background-color: $color-oscuro;
         display: grid;
         grid-template-areas: "logoHeader menuHeader";
         grid-template-columns: 25% 75%;
@@ -451,7 +449,7 @@ h6{
         grid-template-columns: 100%;
     }
     .grid-layout {
-        background-color: rgb(255, 255, 255);
+        background-color: $color-claro;
         padding: 20px;
         padding-bottom: 40px;
         display: grid;

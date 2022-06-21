@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/* Tipografía */
+/* Partials */
 @font-face {
   font-family: gt-walsheim;
   src: url("../media/fonts/GT-Walsheim-Pro-Regular.ttf");
@@ -74,7 +74,7 @@ body {
 }
 
 a {
-  color: aliceblue;
+  color: rgb(252, 252, 252);
   text-decoration: none;
 }
 
@@ -193,6 +193,9 @@ h6 {
   position: relative;
   width: 100%;
 }
+.container:hover .overlay {
+  opacity: 1;
+}
 
 .overlay {
   position: absolute;
@@ -207,12 +210,8 @@ h6 {
   background-color: rgb(38, 37, 37);
 }
 
-.container:hover .overlay {
-  opacity: 1;
-}
-
 .text {
-  color: white;
+  color: rgb(252, 252, 252);
   font-size: 20px;
   position: absolute;
   top: 50%;
@@ -243,7 +242,6 @@ h6 {
   -webkit-animation-name: galeria;
           animation-name: galeria;
 }
-
 .fotosGaleria:hover {
   opacity: 0.5;
 }
@@ -254,7 +252,7 @@ h6 {
 }
 
 .grid-layout {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(252, 252, 252);
   padding: 20px;
   padding-bottom: 40px;
   display: grid;
@@ -264,13 +262,13 @@ h6 {
 
 .caja {
   display: flex;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(252, 252, 252);
   justify-content: center;
   padding: 5px;
 }
 
 .c1 {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(252, 252, 252);
 }
 
 /* Página Nosotres */
@@ -451,7 +449,7 @@ h6 {
   }
 
   .grid-layout {
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(252, 252, 252);
     padding: 20px;
     padding-bottom: 40px;
     display: grid;
