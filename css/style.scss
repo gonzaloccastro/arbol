@@ -45,8 +45,7 @@ h1 {
 
 .logoHeader {
     grid-area: logoHeader;
-    display: flex;
-    flex-direction: row;
+    @extend .displayFlex;
     justify-content: flex-start;
     align-items: center;
     padding-left: 20px;
@@ -54,8 +53,7 @@ h1 {
 
 .menuHeader {
     grid-area: menuHeader;
-    display: flex;
-    flex-direction: row;
+    @extend .displayFlex;
     justify-content: space-around;
     align-items: center;
     padding-right: 0px;
@@ -106,8 +104,7 @@ a {
 
 .footerDireccion {
     grid-area: direccion;
-    display: flex;
-    flex-direction: row;
+    @extend .displayFlex;
     justify-content: flex-start;
     align-items: center;
     padding-left: 20px;
@@ -119,22 +116,33 @@ h6{
 }
 
 .footerLogos {
+    @extend .displayFlex;
     grid-area: logos;
-    display: flex;
-    flex-direction: row;
     justify-content: flex-end;
     align-items: center;
     padding-right: 20px;
 }
 
+/* Mixins */
+
+@mixin gridsBodys($body) {
+    display: grid;
+    grid-template-areas: "tituloWeb" "barraMenu" "$body" "barraFooter";
+    grid-template-rows: auto auto auto auto;
+    grid-template-columns: auto;
+}
+
+/* Extend Flex */
+
+.displayFlex {
+    display: flex;
+    flex-direction: row;
+}
 
 /* Página Index */
 
 .gridBodyInicio {
-    display: grid;
-    grid-template-areas: "tituloWeb" "barraMenu" "contenidoBody" "barraFooter";
-    grid-template-rows: auto 100px auto auto;
-    grid-template-columns: auto;
+    @include gridsBodys(contenidoBody);
 }
 
 .tituloWeb {
@@ -176,10 +184,7 @@ h6{
 /* Página Agenda */
 
 .gridBodyAgenda {
-    display: grid;
-    grid-template-areas: "tituloWeb" "barraMenu" "contenidoBodyAgenda" "barraFooter";
-    grid-template-rows: auto 100px auto auto;
-    grid-template-columns: auto;
+    @include gridsBodys(contenidoBodyAgenda);
 }
 
 .contenidoBodyAgenda {
@@ -231,10 +236,7 @@ h6{
 /* Página Galería */
 
 .gridBodyGaleria {
-    display: grid;
-    grid-template-areas: "tituloWeb" "barraMenu" "contenidoBodyGaleria" "barraFooter";
-    grid-template-rows: auto 100px auto auto;
-    grid-template-columns: auto;
+    @include gridsBodys(contenidoBodyGaleria);
 }
 
 .contenidoBodyGaleria {
@@ -279,10 +281,7 @@ h6{
 /* Página Nosotres */
 
 .gridBodyNosotres {
-    display: grid;
-    grid-template-areas: "tituloWeb" "barraMenu" "contenidoBodyNosotres" "barraFooter";
-    grid-template-rows: auto 100px auto auto;
-    grid-template-columns: auto;
+    @include gridsBodys(contenidoBodyNosotres);
 }
 
 .contenidoBodyNosotres {
@@ -337,10 +336,7 @@ h6{
 /* Página Contacto */
 
 .gridBodyContacto {
-    display: grid;
-    grid-template-areas: "tituloWeb" "barraMenu" "contenidoBodyContacto" "barraFooter";
-    grid-template-rows: auto auto auto auto;
-    grid-template-columns: auto;
+    @include gridsBodys(contenidoBodyContacto);
 }
 
 .contenidoBodyContacto {
@@ -379,10 +375,7 @@ h6{
 @media screen and (max-width: 460px) {
     /* Página Index */
     .gridBodyInicio {
-        display: grid;
-        grid-template-areas: "tituloWeb" "barraMenu" "contenidoBody" "barraFooter";
-        grid-template-rows: auto 80px auto auto;
-        grid-template-columns: auto;
+        @include gridsBodys(contenidoBody);
     }
     .barraMenu {
         grid-area: barraMenu;
@@ -412,8 +405,8 @@ h6{
         grid-area: contenidoBody;
         display: flex;
         justify-content: center;
-        margin-bottom: 80px;
-        margin-top: 70px;
+        margin-bottom: 150px;
+        margin-top: 150px;
     }
     .logo {
         padding: 00px;
@@ -423,13 +416,13 @@ h6{
     .barraFooter {
         grid-area: barraFooter;
     }
-    /* Página Agenda */
+    
+    //* Página Agenda */
+
     .gridBodyAgenda {
-        display: grid;
-        grid-template-areas: "barraMenu" "contenidoBodyAgenda" "barraFooter";
-        grid-template-rows: 80px auto auto;
-        grid-template-columns: 100%;
+        @include gridsBodys(contenidoBodyAgenda);
     }
+
     .gridAgenda {
         display: grid;
         grid-template-columns: auto;
@@ -443,10 +436,7 @@ h6{
     }
     /* Página Galeria */
     .gridBodyGaleria {
-        display: grid;
-        grid-template-areas: "barraMenu" "contenidoBodyGaleria" "barraFooter";
-        grid-template-rows: 80px auto 100px;
-        grid-template-columns: 100%;
+        @include gridsBodys(contenidoBodyGaleria);
     }
     .grid-layout {
         background-color: $color-claro;
@@ -466,11 +456,9 @@ h6{
         display: none;
     }
     /* Página Nosotres */
+
     .gridBodyNosotres {
-        display: grid;
-        grid-template-areas: "barraMenu" "contenidoBodyNosotres" "barraFooter";
-        grid-template-rows: auto auto auto;
-        grid-template-columns: 100%;
+        @include gridsBodys(contenidoBodyNosotres);
     }
     .gridNosotres {
         display: grid;
@@ -498,12 +486,11 @@ h6{
         width: 100%;
     }
     /* Página Contacto */
+
     .gridBodyContacto {
-        display: grid;
-        grid-template-areas: "barraMenu" "contenidoBodyContacto" "barraFooter";
-        grid-template-rows: auto auto auto;
-        grid-template-columns: 100%;
+        @include gridsBodys(contenidoBodyContacto);
     }
+
     .fotoContacto {
         padding: 10px;
         height: 180px;
