@@ -14,6 +14,17 @@
   list-style-type: none;
 }
 
+/* Extend Flex */
+.displayFlex, .footerLogos, .footerDireccion, .menuHeader, .logoHeader {
+  display: flex;
+  flex-direction: row;
+}
+
+.flexCentrado, .imagenNosotres, .textoDescripcion, .tituloNosotres, .cajatituloNosotres {
+  display: flex;
+  align-items: center;
+}
+
 /* Barra Título */
 h1 {
   color: rgb(38, 37, 37);
@@ -64,16 +75,6 @@ h1 {
   background-color: rgb(38, 37, 37);
 }
 
-/* Body General */
-body {
-  text-align: center;
-}
-
-a {
-  color: rgb(252, 252, 252);
-  text-decoration: none;
-}
-
 /* Footer General */
 .gridFooter {
   background-color: rgb(38, 37, 37);
@@ -100,6 +101,10 @@ a {
 
 h6 {
   font-size: 90%;
+}
+
+a {
+  color: rgb(252, 252, 252);
   text-decoration: none;
 }
 
@@ -110,14 +115,12 @@ h6 {
   padding-right: 20px;
 }
 
-/* Mixins */
-/* Extend Flex */
-.displayFlex, .logoHeader, .menuHeader, .footerDireccion, .footerLogos {
-  display: flex;
-  flex-direction: row;
+/* Body General */
+body {
+  text-align: center;
 }
 
-/* Página Index */
+/* Mixins */ /* Página Index */
 .gridBodyInicio {
   display: grid;
   grid-template-areas: "tituloWeb" "barraMenu" "$body" "barraFooter";
@@ -137,26 +140,16 @@ h6 {
   grid-area: contenidoBody;
   display: flex;
   justify-content: center;
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/652/confectionary.png);
 }
 
 .logo {
   padding: 40px;
   height: 300px;
-  margin-top: 50%;
-  margin-bottom: 50%;
-  -webkit-animation-name: logoIn;
-          animation-name: logoIn;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
-}
-
-@-webkit-keyframes logoIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 2;
-  }
+  margin-top: 90%;
+  margin-bottom: 90%;
+  animation-name: logoIn;
+  animation-duration: 3s;
 }
 
 @keyframes logoIn {
@@ -181,7 +174,12 @@ h6 {
 
 .contenidoBodyAgenda {
   grid-area: contenidoBodyAgenda;
-  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/652/confectionary.png);
+}
+
+.tituloAgenda {
+  padding: 50px;
 }
 
 .imgAgenda {
@@ -220,54 +218,9 @@ h6 {
 }
 
 .gridAgenda {
+  padding: 20px;
   display: grid;
   grid-template-columns: auto auto;
-}
-
-/* Página Galería */
-.gridBodyGaleria {
-  display: grid;
-  grid-template-areas: "tituloWeb" "barraMenu" "$body" "barraFooter";
-  grid-template-rows: auto auto auto auto;
-  grid-template-columns: auto;
-}
-
-.contenidoBodyGaleria {
-  grid-area: contenidoBodyGaleria;
-}
-
-.fotosGaleria {
-  height: 270px;
-  -webkit-animation-name: galeria;
-          animation-name: galeria;
-}
-.fotosGaleria:hover {
-  opacity: 0.5;
-}
-
-.tituloGaleria,
-.tituloAgenda {
-  padding: 20px;
-}
-
-.grid-layout {
-  background-color: rgb(252, 252, 252);
-  padding: 20px;
-  padding-bottom: 40px;
-  display: grid;
-  grid-template-areas: "auto auto";
-  grid-template-columns: 50% 50%;
-}
-
-.caja {
-  display: flex;
-  background-color: rgb(252, 252, 252);
-  justify-content: center;
-  padding: 5px;
-}
-
-.c1 {
-  background-color: rgb(252, 252, 252);
 }
 
 /* Página Nosotres */
@@ -280,6 +233,7 @@ h6 {
 
 .contenidoBodyNosotres {
   grid-area: contenidoBodyNosotres;
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/652/confectionary.png);
 }
 
 .gridNosotres {
@@ -291,39 +245,69 @@ h6 {
 }
 
 .cajatituloNosotres {
-  display: flex;
   grid-area: titulo;
   justify-content: center;
-  align-items: center;
-}
-
-.tituloNosotres {
-  display: flex;
-  align-items: center;
-  margin-top: 1rem;
+  margin-top: 70px;
 }
 
 .textoDescripcion {
   grid-area: texto;
-  display: flex;
-  align-content: center;
   justify-content: center;
   height: auto;
   max-width: 600px;
   padding: 1rem;
   margin-top: 0.5rem;
+  margin: 1rem;
 }
 
 .imagenNosotres {
   grid-area: imagen;
-  display: flex;
   justify-items: center;
-  align-items: center;
   height: auto;
   width: 100%;
   padding: 40px;
   margin-top: -10px;
   margin-bottom: 10px;
+}
+
+/* Página Galería */
+.gridBodyGaleria {
+  display: grid;
+  grid-template-areas: "tituloWeb" "barraMenu" "$body" "barraFooter";
+  grid-template-rows: auto auto auto auto;
+  grid-template-columns: auto;
+}
+
+.contenidoBodyGaleria {
+  grid-area: contenidoBodyGaleria;
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/652/confectionary.png);
+  padding: 3.5%;
+}
+
+.fotosGaleria {
+  height: 270px;
+  animation-name: galeria;
+}
+.fotosGaleria:hover {
+  opacity: 0.5;
+}
+
+.tituloGaleria {
+  padding: 10px;
+}
+
+.grid-layout {
+  padding: 20px;
+  padding-bottom: 40px;
+  display: grid;
+  grid-template-areas: "auto auto";
+  grid-template-columns: 50% 50%;
+}
+
+.caja {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
 }
 
 /* Página Contacto */
@@ -332,6 +316,11 @@ h6 {
   grid-template-areas: "tituloWeb" "barraMenu" "$body" "barraFooter";
   grid-template-rows: auto auto auto auto;
   grid-template-columns: auto;
+}
+
+.fondoGaleria {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/652/confectionary.png);
+  padding: 5%;
 }
 
 .contenidoBodyContacto {
@@ -344,13 +333,12 @@ h6 {
 }
 
 .fotoContacto {
-  padding: 10px;
-  height: 300px;
+  padding: 2rem;
+  width: 100%;
 }
 
 .formularioContacto {
-  margin: 10px;
-  padding: 18px;
+  padding: 28px;
 }
 
 .formu {
@@ -362,6 +350,10 @@ h6 {
 
 /* Media Queries */
 @media screen and (max-width: 460px) {
+  /* Título */
+  h1 {
+    display: none;
+  }
   /* Página Index */
   .gridBodyInicio {
     display: grid;
@@ -369,22 +361,15 @@ h6 {
     grid-template-rows: auto auto auto auto;
     grid-template-columns: auto;
   }
-
   .barraMenu {
     grid-area: barraMenu;
   }
-
-  h1 {
-    display: none;
-  }
-
   .gridHeader {
     background-color: rgb(38, 37, 37);
     display: grid;
     grid-template-areas: "logoHeader menuHeader";
     grid-template-columns: 25% 75%;
   }
-
   .menuHeader {
     grid-area: menuHeader;
     display: flex;
@@ -394,50 +379,38 @@ h6 {
     padding-right: 20px;
     flex-wrap: wrap;
   }
-
-  .botoninicio {
-    display: none;
-  }
-
   .contenidoBody {
     grid-area: contenidoBody;
     display: flex;
     justify-content: center;
-    margin-bottom: 150px;
-    margin-top: 150px;
+    padding-bottom: 150px;
+    padding-top: 150px;
   }
-
   .logo {
     padding: 0px;
     margin: 70px;
     height: 120px;
   }
-
   .barraFooter {
     grid-area: barraFooter;
   }
-
   .gridBodyAgenda {
     display: grid;
     grid-template-areas: "tituloWeb" "barraMenu" "$body" "barraFooter";
     grid-template-rows: auto auto auto auto;
     grid-template-columns: auto;
   }
-
   .gridAgenda {
     display: grid;
     grid-template-columns: auto;
   }
-
   .imgAgenda {
     height: 200px;
   }
-
   .contenidoBodyAgenda {
     grid-area: contenidoBodyAgenda;
-    margin-top: 50px;
+    padding-top: 20px;
   }
-
   /* Página Galeria */
   .gridBodyGaleria {
     display: grid;
@@ -445,28 +418,18 @@ h6 {
     grid-template-rows: auto auto auto auto;
     grid-template-columns: auto;
   }
-
   .grid-layout {
-    background-color: rgb(252, 252, 252);
-    padding: 20px;
     padding-bottom: 40px;
     display: grid;
     grid-template-areas: "auto";
     grid-template-columns: 100%;
   }
-
   .contenidoBodyGaleria {
-    margin-top: 70px;
+    padding-top: 50px;
   }
-
   .fotosGaleria {
     height: 150px;
   }
-
-  h1 {
-    display: none;
-  }
-
   /* Página Nosotres */
   .gridBodyNosotres {
     display: grid;
@@ -474,7 +437,6 @@ h6 {
     grid-template-rows: auto auto auto auto;
     grid-template-columns: auto;
   }
-
   .gridNosotres {
     display: grid;
     grid-template-rows: 8% auto auto;
@@ -482,10 +444,9 @@ h6 {
     grid-template-columns: 100%;
     grid-gap: 0px;
     justify-items: center;
-    margin-top: 70px;
-    margin-bottom: 40px;
+    padding-top: 2rem;
+    padding-bottom: 40px;
   }
-
   .textoDescripcion {
     grid-area: texto;
     display: flex;
@@ -494,7 +455,6 @@ h6 {
     width: 100%;
     padding: 30px;
   }
-
   .imagenNosotres {
     grid-area: imagen;
     display: flex;
@@ -502,7 +462,6 @@ h6 {
     align-items: center;
     width: 100%;
   }
-
   /* Página Contacto */
   .gridBodyContacto {
     display: grid;
@@ -510,23 +469,25 @@ h6 {
     grid-template-rows: auto auto auto auto;
     grid-template-columns: auto;
   }
-
   .fotoContacto {
-    padding: 10px;
-    height: 180px;
+    padding: 2rem;
+    width: 100%;
   }
-
+  .tituloGaleria {
+    padding-top: 3rem;
+  }
   .formularioContacto {
     margin: 10px;
     padding: 18px;
     margin-top: 50px;
     margin-bottom: 10px;
   }
-
   .formu {
     display: flex;
     justify-items: center;
     align-items: center;
     flex-direction: column;
   }
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */
