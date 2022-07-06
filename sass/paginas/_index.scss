@@ -24,17 +24,6 @@
     height: 300px;
     margin-top: 90%;
     margin-bottom: 90%;
-    animation-name: logoIn;
-    animation-duration: 3s;
-}
-
-@keyframes logoIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 2;
-    }
 }
 
 .barraFooter {

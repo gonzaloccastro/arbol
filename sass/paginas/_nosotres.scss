@@ -16,6 +16,7 @@
     grid-template-areas: 'titulo' 'texto' 'imagen';
     grid-gap: 5px;
     justify-items: center;
+    @extend .animacionIn;
 }
 
 .cajatituloNosotres {

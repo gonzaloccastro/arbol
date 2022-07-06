@@ -8,6 +8,7 @@
     grid-area: contenidoBodyAgenda;
     padding-bottom: 1rem;
     background: $imagenFondo;
+    @extend .animacionIn;
 }
 
 .tituloAgenda {

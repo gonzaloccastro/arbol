@@ -8,6 +8,7 @@
     grid-area: contenidoBodyGaleria;
     background: $imagenFondo;
     padding: 3.5%;
+    @extend .animacionIn;
 }
 
 .fotosGaleria {

@@ -27,6 +27,10 @@
     padding: 28px;
 }
 
+.contenidoBodyContacto{
+    @extend .animacionIn;
+}
+
 .formu {
     display: flex;
     justify-items: center;

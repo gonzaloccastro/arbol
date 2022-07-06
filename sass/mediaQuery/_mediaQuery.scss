@@ -97,17 +97,15 @@
     }
     .textoDescripcion {
         grid-area: texto;
-        display: flex;
-        align-items: center;
+        @extend .flexCentrado;
         height: auto;
         width: 100%;
         padding: 30px;
     }
     .imagenNosotres {
         grid-area: imagen;
-        display: flex;
+        @extend .flexCentrado;
         justify-items: center;
-        align-items: center;
         width: 100%;
     }
 
